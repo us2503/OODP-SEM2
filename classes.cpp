@@ -222,7 +222,7 @@ int main(){
     p2.showDetails();
     return 0;
 }
-*/
+
 #include<iostream>
 using namespace std;
 class StudentResult{
@@ -255,5 +255,132 @@ void StudentResult :: calculateGrade(){
 int main(){
     StudentResult s1;
     s1.calculateGrade();
+    return 0;
+}
+//Constructor
+#include<iostream>
+using namespace std;
+class Student{
+    private:
+        int rollno;
+        string name;
+    public:
+        Student(){
+            rollno = 66;
+            name = "utkarsh";
+        }
+        void display(){
+            cout<<"Roll No: "<<rollno<<endl;
+            cout<<"Name: "<<name<<endl;
+        }
+    };
+    int main(){
+    Student s1;
+    s1.display();
+    return 0;
+    }
+
+//Write a program for temperature monitoring system. create a class TemperatureSensor, use a default constructor to set temp to 25 display the temp
+#include<iostream>
+using namespace std;
+class TemperatureSensor{
+    private:
+        float temp;
+    public:
+        TemperatureSensor(){
+            temp = 25.00;
+        }
+        void display(){
+            cout<<"Temperature: "<<temp<<" C"<<endl;
+        }
+};
+int main(){
+    TemperatureSensor t1;
+    t1.display();
+    return 0;
+}
+//Balance account problem
+#include<iostream>
+using namespace std;
+class BankAccount{
+    private:
+        float balance;
+    public :
+        BankAccount(){
+            balance = 0.00; 
+        }
+        void display(){
+            cout<<"Balance: "<<balance<<endl;
+        }
+    };
+int main(){
+    BankAccount b1;
+    b1.display();
+    return 0;
+}
+#include<iostream>
+using namespace std;
+class IoTDevice{
+    private:
+        int batteryLevel;
+        string status;
+    public:
+        IoTDevice(){
+            batteryLevel = 100;
+            status = "Idle";
+        }
+        void display(){
+            cout<<"Battery Level: "<<batteryLevel<<"%"<<endl;
+            cout<<"Status: "<<status<<endl;
+        }
+};
+int main(){
+    IoTDevice d1;
+    d1.display();
+    return 0;
+}
+//parameterized constructor
+#include<iostream>
+using namespace std;
+class Student{
+    private:
+        int rollno;
+        string name;
+    public:
+        Student(int x, string n){
+            rollno = x;
+            name = n;
+        }
+        void display(){
+            cout<<"Roll No: "<<rollno<<endl;
+            cout<<"Name: "<<name<<endl;
+        }
+};
+int main(){
+    // Student s1;      (this gives an error because we have defined a parameterized constructor and havent provided a value for the parameters)
+    Student s1(66, "utkarsh");
+    s1.display();
+    return 0;
+}*/
+//Student class with parameterized constructor
+#include<iostream>
+using namespace std;
+class Student{
+    private:
+        int roll;
+        string name;
+    public:
+        Student(int r, string n){
+            roll = r;
+            name = n;
+        }
+        void display(){
+            cout<<"Roll No: "<<roll<<endl;
+            cout<<"Name: "<<name<<endl;
+        }
+    };
+int main(){
+    Student s1(66, "Utkarsh");
+    s1.display();
     return 0;
 }
